@@ -1,0 +1,6 @@
+interface:
+  display_name: "compose-ui"
+  short_description: "Essential skills and best pracises to create UI in Jetpack Compose or KMP Compose"
+  default_prompt: "Use compose-ui for this task."
+policy:
+  allow_implicit_invocation: true
