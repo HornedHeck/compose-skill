@@ -34,6 +34,12 @@ The skill provides comprehensive guidance on the following areas:
 
 ---
 
+## Contributing & Feedback
+
+Suggestions for new features, pattern updates, or bug reports are welcome! Please **open an issue** in the repository to propose changes or discuss improvements.
+
+---
+
 ## Roadmap
 
 Upcoming additions to further enhance the skill's capabilities:
@@ -43,3 +49,4 @@ Upcoming additions to further enhance the skill's capabilities:
 - [ ] **Modifier Ordering**: Detailed analysis of the "Chain of Responsibility" pattern and how order impacts layout, visuals, and interaction.
 - [ ] **Accessibility (a11y)**: Semantic properties and testing for inclusive UI.
 - [ ] **Testing Patterns**: Guidance on writing UI tests for Compose.
+
