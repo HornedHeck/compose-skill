@@ -507,7 +507,7 @@ For detailed guidance on common Compose UI patterns, read the relevant reference
 | Text inputs | `references/text_inputs.md` | Implementing forms, text fields, input validation |
 | Dialogs | `references/dialogs.md` | Adding confirmation dialogs, VM-driven or UI-driven dialogs |
 | Lists | `references/lists.md` | Implementing LazyColumn, LazyRow, or any scrollable list |
-
+| Selection Input | `references/selection_input.md` | Implementing single or multiple selection views |
 ---
 
 ## VI. Workflow
