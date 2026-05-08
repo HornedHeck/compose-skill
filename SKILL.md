@@ -472,6 +472,42 @@ fun TransactionDetailScreen(
 }
 ```
 
+### 5. UI-Layer Enums
+
+When a UI-layer enum maps each entry to a distinct UI property (label, icon, color, etc.), prefer storing those properties as **constructor parameters** rather than mapping them via `when` expressions. This reduces boilerplate, ensures exhaustiveness at compile time, and keeps the mapping co-located with the enum definition.
+
+Use `@Composable` extension functions for properties that require a Compose context (e.g. `stringResource`).
+
+```kotlin
+// Good — properties on enum entries
+enum class HomeRange(
+    val label: StringResource,
+) {
+    ONE_MONTH(Res.string.home_range_1m),
+    THREE_MONTHS(Res.string.home_range_3m),
+    SIX_MONTHS(Res.string.home_range_6m),
+    ONE_YEAR(Res.string.home_range_1y);
+}
+
+@Composable
+private fun HomeRange.text(): String = stringResource(label)
+
+// Bad — separate `when` mapping for each property
+enum class HomeRange {
+    ONE_MONTH, THREE_MONTHS, SIX_MONTHS, ONE_YEAR;
+}
+
+@Composable
+private fun HomeRange.label(): String = when (this) {
+    HomeRange.ONE_MONTH -> stringResource(Res.string.home_range_1m)
+    HomeRange.THREE_MONTHS -> stringResource(Res.string.home_range_3m)
+    HomeRange.SIX_MONTHS -> stringResource(Res.string.home_range_6m)
+    HomeRange.ONE_YEAR -> stringResource(Res.string.home_range_1y)
+}
+```
+
+This applies only to enums in the UI layer (e.g. enums defined in or used by ViewModels, UI state, or composables). Domain-layer enums should remain simple if they have no UI-specific properties.
+
 ---
 
 ## IV. Collections & Stability
