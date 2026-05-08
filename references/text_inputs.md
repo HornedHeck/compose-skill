@@ -1,11 +1,10 @@
 # Text Input Patterns
 
-There are 2 approaches to handle text input: Modern and Legacy.
-Prefer Modern for new projects; use the appropriate one for projects with existing input handling.
+**CRITICAL RULE:** You **MUST** use the Modern Approach (state-based text fields) by default. The Legacy Approach (value-based text fields) is **STRICTLY PROHIBITED** unless the project's explicit guidelines mandate its use.
 
-## 1. Modern Approach
+## 1. Modern Approach (Mandatory Default)
 
-Use state-based text fields via the `TextFieldState` class.
+Always use state-based text fields via the `TextFieldState` class.
 
 ### Case 1: State hoisting in ViewModel
 
@@ -99,9 +98,9 @@ fun LoginField(login: TextFieldState) {
 
 State hoisting rules still apply — hoist state as low as possible while accessible to all consumers.
 
-## 2. Legacy Approach
+## 2. Legacy Approach (Use ONLY when explicitly required)
 
-Legacy approach uses value-based text fields.
+The legacy approach uses value-based text fields. **Do NOT use this approach unless explicitly mandated by project guidelines.**
 
 Guidelines:
 - Immediately and synchronously update state in VM function:

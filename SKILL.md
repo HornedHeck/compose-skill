@@ -195,7 +195,7 @@ private val RadioStrokeWidth = 2.dp
 
 ### 6. String Resources
 
-Always use string resources (e.g., `stringResource(id = R.string.some_text)`) for all user-visible text. **Never** hardcode string literals in UI code. This is a strict rule to ensure proper internationalization and code maintainability.
+Always use string resources (e.g., `stringResource(id = R.string.some_text)`) for all user-visible text, including formatted numeric values. **Never** hardcode string literals in UI code. This is a strict rule to ensure proper internationalization and code maintainability.
 
 ---
 
